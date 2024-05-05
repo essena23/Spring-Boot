@@ -7,7 +7,7 @@ public class Service {
     }
 
     public String calculator() {
-        return "Добро пожаловать в калькулятор";
+        return "Добро пожаловать в калькулятор!";
     }
 
     public String plusSign(int num1, int num2) {
