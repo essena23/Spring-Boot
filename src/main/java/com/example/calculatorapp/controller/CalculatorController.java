@@ -1,25 +1,26 @@
-package com.example.calculatorapp;
+package com.example.calculatorapp.controller;
 
+import com.example.calculatorapp.service.CalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
-    private final Service service;
+public class CalculatorController {
+    private final CalculatorService calculatorService;
 
-    public Controller(Service service) {
-        this.service = service;
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
     }
 
     @GetMapping
     public String hello() {
-        return service.hello();
+        return calculatorService.hello();
     }
 
     @GetMapping(path = "/calculator")
     public String calculator() {
-        return service.calculator();
+        return calculatorService.calculator();
     }
 
     @GetMapping(path = "/calculator/plus")
@@ -27,7 +28,7 @@ public class Controller {
         if (num1 == null || num2 == null) {
             return "Ошибка! Введите параметр";
         }
-        return service.plusSign(num1, num2);
+        return calculatorService.plusSign(num1, num2);
     }
 
     @GetMapping(path = "/calculator/minus")
@@ -35,7 +36,7 @@ public class Controller {
         if (num1 == null || num2 == null) {
             return "Ошибка! Введите параметр";
         }
-        return service.minusSign(num1, num2);
+        return calculatorService.minusSign(num1, num2);
     }
 
     @GetMapping(path = "/calculator/multiply")
@@ -43,7 +44,7 @@ public class Controller {
         if (num1 == null || num2 == null) {
             return "Ошибка! Введите параметр";
         }
-        return service.multiplySign(num1, num2);
+        return calculatorService.multiplySign(num1, num2);
     }
 
     @GetMapping(path = "/calculator/divide")
@@ -54,6 +55,6 @@ public class Controller {
         if (num2 == 0) {
             return "Ошибка! На ноль делить нельзя!";
         }
-        return service.divideSign(num1, num2);
+        return calculatorService.divideSign(num1, num2);
     }
 }

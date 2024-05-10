@@ -1,7 +1,7 @@
-package com.example.calculatorapp;
+package com.example.calculatorapp.service;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class CalculatorService {
     public String hello() {
         return "hello";
     }
