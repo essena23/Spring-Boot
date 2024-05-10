@@ -1,13 +1,13 @@
-package com.example.calculatorapp;
+package com.example.calculatorapp.service;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class CalculatorService {
     public String hello() {
         return "hello";
     }
 
     public String calculator() {
-        return "Добро пожаловать в калькулятор";
+        return "Добро пожаловать в калькулятор!";
     }
 
     public String plusSign(int num1, int num2) {
